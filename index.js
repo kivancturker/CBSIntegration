@@ -20,8 +20,9 @@ const { fork } = require('child_process');
         process.exit(1);
     }
 
-    const databaseProcess = fork('./database.js');
+    // const databaseProcess = fork('./database.js');
+    const filterProcess = fork('./filterProcess.js');
 
-    twitterStream.streamConnect(databaseProcess);
+    twitterStream.streamConnect(filterProcess);
 
 })();
