@@ -4,7 +4,7 @@ const Filter = require('./filter');
 
 (async() => {
 
-    const databaseProcess = fork('./database.js');
+    // const databaseProcess = fork('./database.js');
     const cbsClientProcess = fork('./cbsClient.js');
     const location = "X";
 
@@ -16,7 +16,7 @@ const Filter = require('./filter');
     // Read the incoming messages from parent
     process.on("message", async (data) => {
 
-        databaseProcess.send(data);
+        // databaseProcess.send(data);
 
         filter.setText(data.data.text);
 
